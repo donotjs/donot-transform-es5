@@ -17,7 +17,8 @@ class ES5Transform extends Transform {
 	compile(filename, data) {
 		return new Promise((resolved, rejected) => {
 			var result = babel.transform(data.toString(), {
-				presets: [es2015]
+				presets: [es2015],
+				sourceMaps: true
 			});
 			resolved({
 				data: new Buffer(result.code),

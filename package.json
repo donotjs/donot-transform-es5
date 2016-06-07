@@ -1,6 +1,6 @@
 {
   "name": "@donotjs/donot-transform-es5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ES5 translator for donot.",
   "main": "index.js",
   "scripts": {
