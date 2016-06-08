@@ -14,11 +14,12 @@ class ES5Transform extends Transform {
 		return filename.replace(/\.es5\.js/i, '.js');
 	}
 
-	compile(filename, data) {
+	compile(filename, data, map) {
 		return new Promise((resolved, rejected) => {
 			var result = babel.transform(data.toString(), {
 				presets: [es2015],
-				sourceMaps: true
+				sourceMaps: true,
+				inputSourceMap: map
 			});
 			resolved({
 				data: new Buffer(result.code),
