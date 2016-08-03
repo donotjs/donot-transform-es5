@@ -23,12 +23,12 @@ describe('transform', function() {
 	});
 
 	it ('should compile to es5', () => {
-		return transform.compile('test.es5.js', new Buffer('() => {}')).then((result) => {
-			expect(result).to.be.an('object');
-			expect(result.data).to.be.instanceOf(Buffer);
-			expect(result.data.toString()).to.equal('"use strict";\n\n(function () {});');
-		}).catch((err) => {
-		}).should.eventually.be.fulfilled;
+		return transform.compile('test.es5.js', new Buffer('() => {}'))
+			.then(result => {
+				expect(result).to.be.an('object');
+				expect(result.data).to.be.instanceOf(Buffer);
+				expect(result.data.toString()).to.equal('"use strict";\n\n(function () {});');
+			});
 	});
 
 });
