@@ -19,8 +19,7 @@ class ES5Transform extends Transform {
 			var result = babel.transform(data.toString(), {
 				presets: [es2015],
 				sourceMaps: true,
-				inputSourceMap: map,
-				compact: false
+				inputSourceMap: map
 			});
 			resolved({
 				data: new Buffer(result.code),
